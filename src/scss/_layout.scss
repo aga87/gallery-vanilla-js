@@ -1,0 +1,40 @@
+.l-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.l-nav-wrapper {
+  position: relative;
+  min-height: 100px;
+
+  &__btn-prev {
+    @include centerY-absolute();
+    left: 0;
+    height: 100%;
+  }
+
+  &__btn-next {
+    @include centerY-absolute();
+    right: 0;
+    height: 100%;
+  }
+}
+
+.l-slide-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.l-backdrop {
+  width: 100%;
+  // responsive square
+  padding-top: 100%;
+  position: relative;
+
+  &__img {
+    @include centerXY-absolute();
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+  }
+}

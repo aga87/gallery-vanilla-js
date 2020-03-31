@@ -1,0 +1,8 @@
+.c-gallery {
+  background: $white;
+
+  &__heading {
+    text-align: center;
+    @include fluid-type(320px, 1000px, 32px, 86px);
+  }
+}

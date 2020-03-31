@@ -1,0 +1,17 @@
+@mixin centerXY-absolute {
+  position: absolute;
+  // Center horizontally
+  left: 50%;
+  // Center vertically
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@mixin centerY-absolute {
+  position: absolute;
+  // Center vertically
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

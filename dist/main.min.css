@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  font-size: 110%; }
+
+body {
+  background: #171718;
+  font-family: "Helvetica", "Arial", sans-serif;
+  line-height: 1.5; }
+
+:focus {
+  outline: dotted 3px #0daeee; }
+
+@media only screen and (min-width: 600px) {
+  html {
+    font-size: 125%; } }
+.l-wrapper {
+  max-width: 1000px;
+  margin: 0 auto; }
+
+/*# sourceMappingURL=main.min.css.map */

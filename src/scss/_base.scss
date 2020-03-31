@@ -1,0 +1,19 @@
+html {
+  font-size: 110%;
+}
+
+body {
+  background: $grey;
+  font-family: $font-stack;
+  line-height: $b-l-h;
+}
+
+:focus {
+  outline: dotted 3px $blue;
+}
+
+@media only screen and (min-width: $breakpoint) {
+  html {
+    font-size: 125%;
+  }
+}

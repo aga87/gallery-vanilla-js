@@ -20,8 +20,68 @@
     />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="./src/scss/main.css" />
+    <link rel="stylesheet" type="text/css" href="/dist/css/main.min.css" />
   </head>
 
-  <body></body>
+  <body>
+    <div class="l-wrapper">
+      <div class="c-gallery">
+        <h1 class="c-gallery__heading">Image Gallery - Bikes</h1>
+
+        <div class="l-nav-wrapper">
+          <!-- fixme: tabindex? -->
+          <div class="l-slide-wrapper"
+            role="tabpanel"
+            id="slide"
+            aria-label="main slide"
+            tabindex="0"
+          >
+         <!-- fixme: c-slide  -->
+         <figure class="c-slide jsMainFig" data-slide="0">
+          <div class="l-backdrop">
+            <img
+              class="l-backdrop__img jsMainImg"
+              srcset="
+                https://res.cloudinary.com/aga87/image/upload/c_scale,w_320/v1552140064/chris-barbalis.jpg                  320w,
+                https://res.cloudinary.com/aga87/image/upload/c_scale,w_459/v1552140064/chris-barbalis.jpg                  459w,
+                https://res.cloudinary.com/aga87/image/upload/c_scale,w_583/v1552140064/chris-barbalis.jpg                  583w,
+                https://res.cloudinary.com/aga87/image/upload/c_scale,w_600/v1552140064/chris-barbalis.jpg                  600w
+              "
+              sizes="(max-width: 320px) 320px, (max-width: 459px) 459px, (max-width: 583px) 583px, 600px"
+              src="https://res.cloudinary.com/aga87/image/upload/c_scale,w_600/v1552140064/chris-barbalis.jpg"
+              alt="Dark city bike resting against a wall."
+            />
+          </div>
+
+          <!-- fixme: -->
+          <figcaption class="c-slide__caption">
+            <a
+              class="jsMainCredit"
+              href="https://unsplash.com/photos/RZYPUdaKKj4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              target="_blank"
+              id="credit"
+            >
+              Photo by Chris Barbalis &#x279A;</a
+            >
+            on
+            <a href="https://unsplash.com/" target="_blank"
+              >Unsplash &#x279A;</a
+            >
+          </figcaption>
+        </figure>
+      </div>
+        
+        
+        
+        
+        
+        </div>
+
+          <!-- fixme: aria-hidden=true when js is off? -->
+          <nav class="jsNav"></nav>
+        </div>
+      </div>
+    </div>
+    <!-- <script src="./src/index.js"></script> -->
+  </body>
 </html>
