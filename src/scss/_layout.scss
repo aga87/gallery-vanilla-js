@@ -38,3 +38,27 @@
     max-height: 100%;
   }
 }
+
+.l-grid {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  padding: ($b-l-h * 1rem) 5px;
+}
+
+@media only screen and (min-width: $breakpoint) {
+  .l-nav-wrapper {
+    padding: 0 50px;
+  }
+
+  .l-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media only screen and (min-width: $breakpoint + 300px) {
+  .l-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}

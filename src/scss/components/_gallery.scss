@@ -4,5 +4,6 @@
   &__heading {
     text-align: center;
     @include fluid-type(320px, 1000px, 32px, 86px);
+    padding-bottom: $b-l-h * 1rem;
   }
 }

@@ -1,0 +1,19 @@
+.c-thumbnail {
+  display: block;
+
+  &__backdrop {
+    background: $light-grey;
+  }
+
+  &__caption {
+    display: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.is-selected {
+    outline: 3px solid $blue;
+  }
+}
