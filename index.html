@@ -16,11 +16,15 @@
     />
     <meta
       name="keywords"
-      content="image gallery, vanilla JavaScript, vanilla JS, bikes"
+      content="image gallery, vanilla JavaScript, web accessibility, bikes"
     />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="/dist/css/main.min.css" />
+
+    <noscript>
+      <link rel="stylesheet" type="text/css" href="/dist/css/no-js.min.css" />
+    </noscript>
   </head>
 
   <body>
@@ -29,11 +33,13 @@
         <h1 class="c-gallery__heading">Image Gallery - Bikes</h1>
 
         <div class="l-nav-wrapper">
+          <!-- https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel -->
           <div
             class="l-slide-wrapper"
             role="tabpanel"
             id="slide"
             aria-label="main slide"
+            aria-live="polite"
           >
             <figure class="c-slide jsSlide" data-slide="0">
               <div class="l-backdrop">
@@ -71,14 +77,14 @@
           <nav class="jsNav"></nav>
         </div>
 
-        <section
+        <div
           role="tablist"
           aria-label="Other pictures in this gallery"
           tabindex="0"
         >
-          <ul class="l-grid">
+          <ul role="presentation" class="l-grid">
             <li>
-              <figure
+              <div
                 class="c-thumbnail jsThumbnail is-selected"
                 data-slide="0"
                 role="tab"
@@ -86,9 +92,19 @@
                 tabindex="0"
                 aria-controls="slide"
               >
-                <div class="c-thumbnail__backdrop l-backdrop">
-                  <!-- prettier-ignore -->
-                  <img
+                <!-- fixme: role presentation?  -->
+                <figure>
+                  <!-- <figure
+              class="c-thumbnail jsThumbnail is-selected"
+              data-slide="0"
+              role="tab"
+              aria-selected="true"
+              tabindex="0"
+              aria-controls="slide"
+            > -->
+                  <div class="c-thumbnail__backdrop l-backdrop">
+                    <!-- prettier-ignore -->
+                    <img
                     class="l-backdrop__img jsThumbnail__img"
                     srcset="
                       https://res.cloudinary.com/aga87/image/upload/c_scale,w_320/v1552140064/chris-barbalis.jpg 320w,
@@ -100,26 +116,27 @@
                     src="https://res.cloudinary.com/aga87/image/upload/c_scale,w_600/v1552140064/chris-barbalis.jpg"
                     alt="Dark city bike resting against a wall."
                   />
-                </div>
+                  </div>
 
-                <figcaption class="c-thumbnail__caption">
-                  <a
-                    class="jsThumbnail__credit"
-                    href="https://unsplash.com/photos/RZYPUdaKKj4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                    target="_blank"
-                  >
-                    Photo by Chris Barbalis &#x279A;</a
-                  >
-                  on
-                  <a href="https://unsplash.com/" target="_blank"
-                    >Unsplash &#x279A;</a
-                  >
-                </figcaption>
-              </figure>
+                  <figcaption class="c-thumbnail__caption">
+                    <a
+                      class="jsThumbnail__credit"
+                      href="https://unsplash.com/photos/RZYPUdaKKj4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                      target="_blank"
+                    >
+                      Photo by Chris Barbalis &#x279A;</a
+                    >
+                    on
+                    <a href="https://unsplash.com/" target="_blank"
+                      >Unsplash &#x279A;</a
+                    >
+                  </figcaption>
+                </figure>
+              </div>
             </li>
 
             <li>
-              <figure
+              <div
                 class="c-thumbnail jsThumbnail"
                 data-slide="1"
                 role="tab"
@@ -127,9 +144,18 @@
                 tabindex="-1"
                 aria-controls="slide"
               >
-                <div class="c-thumbnail__backdrop l-backdrop">
-                  <!-- prettier-ignore -->
-                  <img
+                <figure>
+                  <!-- <figure
+                class="c-thumbnail jsThumbnail"
+                data-slide="1"
+                role="tab"
+                aria-selected="false"
+                tabindex="-1"
+                aria-controls="slide"
+              > -->
+                  <div class="c-thumbnail__backdrop l-backdrop">
+                    <!-- prettier-ignore -->
+                    <img
                     class="l-backdrop__img jsThumbnail__img"
                     srcset="
                       https://res.cloudinary.com/aga87/image/upload/c_scale,w_320/v1552760314/tim-mossholder.jpg 320w,
@@ -139,25 +165,25 @@
                     src="https://res.cloudinary.com/aga87/image/upload/c_scale,w_600/v1552760314/tim-mossholder.jpg"
                     alt="Outline of a bike set against a blurred skyline with a palm tree."
                   />
-                </div>
-                <!-- fixme:  -->
-                <figcaption class="c-thumbnail__caption">
-                  <a
-                    class="jsThumbnail__credit"
-                    href="https://unsplash.com/photos/J61kZQXCtzw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                    target="_blank"
-                  >
-                    Photo by Tim Mossholder &#x279A;</a
-                  >on
-                  <a href="https://unsplash.com/" target="_blank"
-                    >Unsplash &#x279A;</a
-                  >
-                </figcaption>
-              </figure>
+                  </div>
+                  <figcaption class="c-thumbnail__caption">
+                    <a
+                      class="jsThumbnail__credit"
+                      href="https://unsplash.com/photos/J61kZQXCtzw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                      target="_blank"
+                    >
+                      Photo by Tim Mossholder &#x279A;</a
+                    >on
+                    <a href="https://unsplash.com/" target="_blank"
+                      >Unsplash &#x279A;</a
+                    >
+                  </figcaption>
+                </figure>
+              </div>
             </li>
 
             <li>
-              <figure
+              <div
                 class="c-thumbnail jsThumbnail"
                 data-slide="2"
                 role="tab"
@@ -165,9 +191,10 @@
                 tabindex="-1"
                 aria-controls="slide"
               >
-                <div class="c-thumbnail__backdrop l-backdrop">
-                  <!-- prettier-ignore -->
-                  <img
+                <figure>
+                  <div class="c-thumbnail__backdrop l-backdrop">
+                    <!-- prettier-ignore -->
+                    <img
                     class="l-backdrop__img jsThumbnail__img"
                     srcset="
                       https://res.cloudinary.com/aga87/image/upload/c_scale,w_320/v1552761207/matteo-stroppaghetti.jpg 320w,
@@ -179,25 +206,26 @@
                     src="https://res.cloudinary.com/aga87/image/upload/c_scale,w_600/v1552761207/matteo-stroppaghetti.jpg"
                     alt="Blue city bikes on a black wall, graffiti."
                   />
-                </div>
-                <figcaption class="c-thumbnail__caption">
-                  <a
-                    class="jsThumbnail__credit"
-                    href="https://unsplash.com/photos/yiVFSP0Sr4g?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                    target="_blank"
-                  >
-                    Photo by Matteo Stroppaghetti &#x279A;</a
-                  >
-                  on
-                  <a href="https://unsplash.com/" target="_blank"
-                    >Unsplash &#x279A;</a
-                  >
-                </figcaption>
-              </figure>
+                  </div>
+                  <figcaption class="c-thumbnail__caption">
+                    <a
+                      class="jsThumbnail__credit"
+                      href="https://unsplash.com/photos/yiVFSP0Sr4g?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                      target="_blank"
+                    >
+                      Photo by Matteo Stroppaghetti &#x279A;</a
+                    >
+                    on
+                    <a href="https://unsplash.com/" target="_blank"
+                      >Unsplash &#x279A;</a
+                    >
+                  </figcaption>
+                </figure>
+              </div>
             </li>
 
             <li>
-              <figure
+              <div
                 class="c-thumbnail jsThumbnail"
                 data-slide="3"
                 role="tab"
@@ -205,9 +233,10 @@
                 tabindex="-1"
                 aria-controls="slide"
               >
-                <div class="c-thumbnail__backdrop l-backdrop">
-                  <!-- prettier-ignore -->
-                  <img
+                <figure>
+                  <div class="c-thumbnail__backdrop l-backdrop">
+                    <!-- prettier-ignore -->
+                    <img
                     class="l-backdrop__img jsThumbnail__img"
                     srcset="
                       https://res.cloudinary.com/aga87/image/upload/c_scale,w_320/v1552762849/josh-wilburne.jpg 320w,
@@ -218,25 +247,26 @@
                     src="https://res.cloudinary.com/aga87/image/upload/c_scale,w_600/v1552762849/josh-wilburne.jpg"
                     alt="Black city bike with flowers in its front basket, parked against a red brick wall near Spring Street metro station in New York City."
                   />
-                </div>
-                <figcaption class="c-thumbnail__caption">
-                  <a
-                    class="jsThumbnail__credit"
-                    href="https://unsplash.com/photos/DU1cH3KnISw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                    target="_blank"
-                  >
-                    Photo by Josh Wilburne &#x279A;</a
-                  >
-                  on
-                  <a href="https://unsplash.com/" target="_blank"
-                    >Unsplash &#x279A;</a
-                  >
-                </figcaption>
-              </figure>
+                  </div>
+                  <figcaption class="c-thumbnail__caption">
+                    <a
+                      class="jsThumbnail__credit"
+                      href="https://unsplash.com/photos/DU1cH3KnISw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                      target="_blank"
+                    >
+                      Photo by Josh Wilburne &#x279A;</a
+                    >
+                    on
+                    <a href="https://unsplash.com/" target="_blank"
+                      >Unsplash &#x279A;</a
+                    >
+                  </figcaption>
+                </figure>
+              </div>
             </li>
 
             <li>
-              <figure
+              <div
                 class="c-thumbnail jsThumbnail"
                 data-slide="4"
                 role="tab"
@@ -244,9 +274,10 @@
                 tabindex="-1"
                 aria-controls="slide"
               >
-                <div class="c-thumbnail__backdrop l-backdrop">
-                  <!-- prettier-ignore -->
-                  <img
+                <figure>
+                  <div class="c-thumbnail__backdrop l-backdrop">
+                    <!-- prettier-ignore -->
+                    <img
                     class="l-backdrop__img jsThumbnail__img"
                     srcset="
                       https://res.cloudinary.com/aga87/image/upload/c_scale,w_320/v1552774313/yannic-laderach.jpg 320w,
@@ -256,25 +287,26 @@
                     src="https://res.cloudinary.com/aga87/image/upload/c_scale,w_400/v1552774313/yannic-laderach.jpg"
                     alt="Women in casual clothing and untied hair cycling in the middle of a city road in the sunset, with red traffic lights in the background."
                   />
-                </div>
-                <figcaption class="c-thumbnail__caption">
-                  <a
-                    class="jsThumbnail__credit"
-                    href="https://unsplash.com/photos/MlqExVzt1no?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                    target="_blank"
-                  >
-                    Photo by Yannic Laderach &#x279A;</a
-                  >
-                  on
-                  <a href="https://unsplash.com/" target="_blank"
-                    >Unsplash &#x279A;</a
-                  >
-                </figcaption>
-              </figure>
+                  </div>
+                  <figcaption class="c-thumbnail__caption">
+                    <a
+                      class="jsThumbnail__credit"
+                      href="https://unsplash.com/photos/MlqExVzt1no?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                      target="_blank"
+                    >
+                      Photo by Yannic Laderach &#x279A;</a
+                    >
+                    on
+                    <a href="https://unsplash.com/" target="_blank"
+                      >Unsplash &#x279A;</a
+                    >
+                  </figcaption>
+                </figure>
+              </div>
             </li>
 
             <li>
-              <figure
+              <div
                 class="c-thumbnail jsThumbnail"
                 data-slide="5"
                 role="tab"
@@ -282,9 +314,10 @@
                 tabindex="-1"
                 aria-controls="slide"
               >
-                <div class="c-thumbnail__backdrop l-backdrop">
-                  <!-- prettier-ignore -->
-                  <img
+                <figure>
+                  <div class="c-thumbnail__backdrop l-backdrop">
+                    <!-- prettier-ignore -->
+                    <img
                     class="l-backdrop__img jsThumbnail__img"
                     srcset="
                       https://res.cloudinary.com/aga87/image/upload/c_scale,w_320/v1552763564/flo-karr.jpg 320w,
@@ -294,25 +327,26 @@
                     src="https://res.cloudinary.com/aga87/image/upload/c_scale,w_600/v1552763564/flo-karr.jpg"
                     alt="Bike handle bars steered with one hand along an empty road towards the sunset, captured from the perspective of the cyclist."
                   />
-                </div>
-                <figcaption class="c-thumbnail__caption">
-                  <a
-                    class="jsThumbnail__credit"
-                    href="https://unsplash.com/photos/nCj0zBLIaAk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                    target="_blank"
-                  >
-                    Photo by Flo Karr &#x279A;</a
-                  >
-                  on
-                  <a href="https://unsplash.com/" target="_blank"
-                    >Unsplash &#x279A;</a
-                  >
-                </figcaption>
-              </figure>
+                  </div>
+                  <figcaption class="c-thumbnail__caption">
+                    <a
+                      class="jsThumbnail__credit"
+                      href="https://unsplash.com/photos/nCj0zBLIaAk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                      target="_blank"
+                    >
+                      Photo by Flo Karr &#x279A;</a
+                    >
+                    on
+                    <a href="https://unsplash.com/" target="_blank"
+                      >Unsplash &#x279A;</a
+                    >
+                  </figcaption>
+                </figure>
+              </div>
             </li>
 
             <li>
-              <figure
+              <div
                 class="c-thumbnail jsThumbnail"
                 data-slide="6"
                 role="tab"
@@ -320,9 +354,10 @@
                 tabindex="-1"
                 aria-controls="slide"
               >
-                <div class="c-thumbnail__backdrop l-backdrop">
-                  <!-- prettier-ignore -->
-                  <img
+                <figure>
+                  <div class="c-thumbnail__backdrop l-backdrop">
+                    <!-- prettier-ignore -->
+                    <img
                     class="l-backdrop__img jsThumbnail__img"
                     srcset="
                       https://res.cloudinary.com/aga87/image/upload/c_scale,w_320/v1552764351/susan-yin.jpg 320w,
@@ -334,25 +369,26 @@
                     src="https://res.cloudinary.com/aga87/image/upload/c_scale,w_600/v1552764351/susan-yin.jpg"
                     alt="A street bike stand in the length of a parking space for one car,  marked by a yellow car outline, with several bikes parked."
                   />
-                </div>
-                <figcaption class="c-thumbnail__caption">
-                  <a
-                    class="jsThumbnail__credit"
-                    href="https://unsplash.com/photos/ym3QFTHYUE4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                    target="_blank"
-                  >
-                    Photo by Susan Yin &#x279A;</a
-                  >
-                  on
-                  <a href="https://unsplash.com/" target="_blank"
-                    >Unsplash &#x279A;</a
-                  >
-                </figcaption>
-              </figure>
+                  </div>
+                  <figcaption class="c-thumbnail__caption">
+                    <a
+                      class="jsThumbnail__credit"
+                      href="https://unsplash.com/photos/ym3QFTHYUE4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                      target="_blank"
+                    >
+                      Photo by Susan Yin &#x279A;</a
+                    >
+                    on
+                    <a href="https://unsplash.com/" target="_blank"
+                      >Unsplash &#x279A;</a
+                    >
+                  </figcaption>
+                </figure>
+              </div>
             </li>
 
             <li>
-              <figure
+              <div
                 class="c-thumbnail jsThumbnail"
                 data-slide="7"
                 role="tab"
@@ -360,9 +396,10 @@
                 tabindex="-1"
                 aria-controls="slide"
               >
-                <div class="c-thumbnail__backdrop l-backdrop">
-                  <!-- prettier-ignore -->
-                  <img
+                <figure>
+                  <div class="c-thumbnail__backdrop l-backdrop">
+                    <!-- prettier-ignore -->
+                    <img
                     class="l-backdrop__img jsThumbnail__img"
                     srcset="
                       https://res.cloudinary.com/aga87/image/upload/c_scale,w_320/v1552769293/ryoji-iwata.jpg 320w,
@@ -373,27 +410,27 @@
                     src="https://res.cloudinary.com/aga87/image/upload/c_scale,w_400/v1552769293/ryoji-iwata.jpg"
                     alt="A man on a bike next to a zebra crossing against a newspaper agent in yellow building in a Japanese town."
                   />
-                </div>
-                <figcaption class="c-thumbnail__caption">
-                  <a
-                    class="jsThumbnail__credit"
-                    href="https://unsplash.com/photos/3vk8Dgkd_Sc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                    target="_blank"
-                  >
-                    Photo by Ryoji Iwata &#x279A;</a
-                  >
-                  on
-                  <a href="https://unsplash.com/" target="_blank"
-                    >Unsplash &#x279A;</a
-                  >
-                </figcaption>
-              </figure>
+                  </div>
+                  <figcaption class="c-thumbnail__caption">
+                    <a
+                      class="jsThumbnail__credit"
+                      href="https://unsplash.com/photos/3vk8Dgkd_Sc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                      target="_blank"
+                    >
+                      Photo by Ryoji Iwata &#x279A;</a
+                    >
+                    on
+                    <a href="https://unsplash.com/" target="_blank"
+                      >Unsplash &#x279A;</a
+                    >
+                  </figcaption>
+                </figure>
+              </div>
             </li>
           </ul>
-        </section>
+        </div>
       </div>
     </div>
-    <!-- <script src="./src/index.js"></script> -->
-    <script src="./src/es5.js"></script>
+    <script src="./src/index.js"></script>
   </body>
 </html>
