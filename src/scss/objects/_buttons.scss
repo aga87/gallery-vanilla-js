@@ -3,7 +3,7 @@
     color: transparent;
   }
   to {
-    color: rgb(13, 174, 238);
+    color: $blue;
   }
 }
 
@@ -23,12 +23,6 @@
 
   &:hover {
     color: $blue;
-    background-image: linear-gradient(
-      to right,
-      rgb(255, 255, 255),
-      rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.2)
-    );
   }
 
   &:focus {
@@ -39,6 +33,15 @@
   &:active {
     font-weight: 700;
   }
+}
+
+.o-btn--prev:hover {
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 255, 255),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.2)
+  );
 }
 
 .o-btn--next:hover {
