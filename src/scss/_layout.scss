@@ -3,22 +3,22 @@
   margin: 0 auto;
 }
 
-.l-nav-wrapper {
-  position: relative;
-  min-height: 100px;
+// .l-nav-wrapper {
+//   position: relative;
+//   min-height: 100px;
 
-  &__btn-prev {
-    @include centerY-absolute();
-    left: 0;
-    height: 100%;
-  }
+//   &__btn-prev {
+//     @include centerY-absolute();
+//     left: 0;
+//     height: 100%;
+//   }
 
-  &__btn-next {
-    @include centerY-absolute();
-    right: 0;
-    height: 100%;
-  }
-}
+//   &__btn-next {
+//     @include centerY-absolute();
+//     right: 0;
+//     height: 100%;
+//   }
+// }
 
 .l-slide-wrapper {
   max-width: $breakpoint;
