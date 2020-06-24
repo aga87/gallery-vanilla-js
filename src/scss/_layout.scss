@@ -2,6 +2,9 @@
   max-width: 1000px;
   margin: 0 auto;
 }
+.l-nav-wrapper {
+  text-align: center;
+}
 
 @supports (position: relative) {
   .l-nav-wrapper {
@@ -41,34 +44,18 @@
   }
 }
 
-@mixin ie-flex-basis($start: 1, $imgNo: 50, $flex-basis: 100px) {
-  @for $i from $start through $imgNo {
-    > *:nth-child(#{$i}) {
-      flex-basis: $flex-basis;
-      // flex-grow: 1;
-      padding: 5px;
-    }
-  }
-}
-
-// fixme:
-.l-nav-wrapper {
-  text-align: center;
-}
-
 .l-thumbnail-container:focus {
   outline: dotted 3px $blue;
 }
 
 .l-grid {
   list-style-type: none;
-  // display: -ms-grid;
-  display: grid;
-  // fixme: ie11
+  //IE11: flexbox with semi-automated img placing (mixin)
   display: -ms-flexbox;
   flex-flow: row wrap;
-  @include ie-flex-basis($start: 1, $imgNo: 50, $flex-basis: 100px);
-  // -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  @include ie-flex-basis($start: 1, $imgNo: 8, $flex-basis: 100px);
+  // Progressive enhancement
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
   padding: ($b-l-h * 0.5rem) 5px;
@@ -80,14 +67,12 @@
   }
 
   .l-grid {
-    // -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: repeat(6, 1fr);
   }
 }
 
 @media only screen and (min-width: $breakpoint + 300px) {
   .l-grid {
-    // -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: repeat(8, 1fr);
   }
 }
