@@ -1,26 +1,3 @@
-@supports (position: relative) {
-  @keyframes lightUp {
-    from {
-      color: transparent;
-    }
-    to {
-      color: $blue;
-    }
-  }
-  .o-btn {
-    color: transparent;
-    animation-name: lightUp;
-    animation-duration: 2s;
-    animation-iteration-count: 3;
-    animation-delay: 3s;
-
-    &:focus {
-      outline: none;
-      color: $blue;
-    }
-  }
-}
-
 .o-btn {
   display: inline-block;
   width: 50px;
@@ -46,6 +23,29 @@
 
   &:active {
     font-weight: 700;
+  }
+}
+
+@supports (position: relative) {
+  @keyframes lightUp {
+    from {
+      color: transparent;
+    }
+    to {
+      color: $blue;
+    }
+  }
+  .o-btn {
+    color: transparent;
+    animation-name: lightUp;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+    animation-delay: 3s;
+
+    &:focus {
+      outline: none;
+      color: $blue;
+    }
   }
 }
 

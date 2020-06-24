@@ -319,21 +319,6 @@ body {
 @media only screen and (min-width: 900px) {
   .l-grid {
     grid-template-columns: repeat(8, 1fr); } }
-@supports (position: relative) {
-  @keyframes lightUp {
-    from {
-      color: transparent; }
-    to {
-      color: #0daeee; } }
-  .o-btn {
-    color: transparent;
-    animation-name: lightUp;
-    animation-duration: 2s;
-    animation-iteration-count: 3;
-    animation-delay: 3s; }
-    .o-btn:focus {
-      outline: none;
-      color: #0daeee; } }
 .o-btn {
   display: inline-block;
   width: 50px;
@@ -357,6 +342,21 @@ body {
   .o-btn:active {
     font-weight: 700; }
 
+@supports (position: relative) {
+  @keyframes lightUp {
+    from {
+      color: transparent; }
+    to {
+      color: #0daeee; } }
+  .o-btn {
+    color: transparent;
+    animation-name: lightUp;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+    animation-delay: 3s; }
+    .o-btn:focus {
+      outline: none;
+      color: #0daeee; } }
 .o-btn--prev:hover {
   background-image: linear-gradient(to right, white, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2)); }
 
