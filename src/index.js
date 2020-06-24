@@ -139,9 +139,14 @@
     changeImg(slideImg, newSlideImg);
     changeLink(slideCreditLink, newSlideCreditLink);
 
-    thumbnails.forEach((thumbnail) => {
-      unselect(thumbnail);
-    });
+    // thumbnails.forEach((thumbnail) => {
+    //   unselect(thumbnail);
+    // });
+    // todo: test
+    for (var i = 0; i < thumbnails.length; i++) {
+      unselect(thumbnails[i]);
+    }
+
     select(this);
 
     this.focus();
@@ -198,8 +203,13 @@
   window.addEventListener('load', createNextBtn);
   navEl.addEventListener('click', handleNavClick, false);
 
-  thumbnails.forEach((thumbnail) => {
-    thumbnail.addEventListener('click', handleThumbnailClick, false);
-    thumbnail.addEventListener('keydown', handleKeyDown);
-  });
+  // thumbnails.forEach((thumbnail) => {
+  //   thumbnail.addEventListener('click', handleThumbnailClick, false);
+  //   thumbnail.addEventListener('keydown', handleKeyDown);
+  // });
+  // todo: test
+  for (var i = 0; i < thumbnails.length; i++) {
+    thumbnails[i].addEventListener('click', handleThumbnailClick, false);
+    thumbnails[i].addEventListener('keydown', handleKeyDown);
+  }
 })();
