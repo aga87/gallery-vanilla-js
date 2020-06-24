@@ -43,11 +43,11 @@
   @for $i from $start through $img {
     > *:nth-child(#{$i}) {
       flex-basis: 150px;
+      padding: 5px;
     }
   }
 }
 
-// todo: test
 .l-grid {
   list-style-type: none;
   // display: -ms-grid;
