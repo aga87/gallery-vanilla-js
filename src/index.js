@@ -35,8 +35,8 @@
 
   /**
    * Create a "next" button:
-   *  <button type="button" title="Show next" class="l-nav-wrapper__btn-next o-btn o-btn--next jsNav__next">
-   *    <span class="jsNav__next" aria-hidden="true">&gt;</span>
+   *  <button type="button" title="Show next" class="l-nav-wrapper__btn-next o-btn o-btn--next" data-nav="next">
+   *    <span data-nav="next" aria-hidden="true">&gt;</span>
    *  </button>
    */
 
@@ -46,14 +46,21 @@
     var text = document.createTextNode('>');
     nextBtn.setAttribute('type', 'button');
     nextBtn.setAttribute('title', 'Show next');
+    // fixme: test
+    nextBtn.setAttribute('data-nav', 'next');
+
     nextBtn.classList.add(
       'o-btn',
       'o-btn--next',
-      'l-nav-wrapper__btn-next',
-      'jsNav__next'
+      'l-nav-wrapper__btn-next'
+      // 'jsNav__next'
     );
-    spanEl.classList.add('jsNav__next');
+
+    // spanEl.classList.add('jsNav__next');
     spanEl.setAttribute('aria-hidden', 'true');
+    // fixme:
+    spanEl.setAttribute('data-nav', 'next');
+
     spanEl.appendChild(text);
     nextBtn.appendChild(spanEl);
     navEl.appendChild(nextBtn);
@@ -108,7 +115,9 @@
 
     var newIndex;
     // Get the index of the thumbnail to display
-    if (e.target.matches('.jsNav__next')) {
+    // fixme:
+    // if (e.target.matches('.jsNav__next'))
+    if (e.target.getAttribute('data-nav') === 'next') {
       newIndex = getNextIndex(currentIndex, thumbnails);
     } else if (e.target.matches('.jsNav__previous')) {
       newIndex = getPreviousIndex(currentIndex, thumbnails);
@@ -149,6 +158,11 @@
   function handleKeyDown(e) {
     var key = e.code;
     var currentIndex;
+
+    // fixme:
+
+    console.log(e.code);
+    console.log(e.key);
 
     switch (key) {
       case 'Enter':
@@ -192,9 +206,6 @@
         return;
     }
   }
-
-  // window.onload = createPrevBtn;
-  // window.onload = createNextBtn;
 
   window.onload = function () {
     createPrevBtn();
