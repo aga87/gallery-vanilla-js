@@ -139,11 +139,12 @@
   }
 
   function handleKeyDown(e) {
-    var key = e.code;
+    // var key = e.code;
+    // fixme: test
+    var key = e.key;
     var currentIndex;
 
     // fixme:
-
     console.log(e.code);
     console.log(e.key);
 
