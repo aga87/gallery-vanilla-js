@@ -42,7 +42,7 @@
 @mixin ie-flex-basis($start: 1, $img: 50) {
   @for $i from $start through $img {
     > *:nth-child(#{$i}) {
-      flex-basis: 50px;
+      flex-basis: 150px;
     }
   }
 }
