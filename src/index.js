@@ -142,7 +142,7 @@
     // thumbnails.forEach((thumbnail) => {
     //   unselect(thumbnail);
     // });
-    // todo: test
+    // todo: testt
     for (var i = 0; i < thumbnails.length; i++) {
       unselect(thumbnails[i]);
     }
