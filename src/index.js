@@ -199,8 +199,13 @@
     }
   }
 
-  window.addEventListener('load', createPrevBtn);
-  window.addEventListener('load', createNextBtn);
+  // todo: test
+  // window.addEventListener('load', createPrevBtn);
+  // window.addEventListener('load', createNextBtn);
+
+  window.onload = createPrevBtn;
+  window.onload = createNextBtn;
+
   navEl.addEventListener('click', handleNavClick, false);
 
   // thumbnails.forEach((thumbnail) => {
