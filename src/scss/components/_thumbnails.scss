@@ -13,11 +13,11 @@
     cursor: pointer;
   }
 
-  &:focus {
-    outline: dotted 3px $blue;
+  &.is-selected {
+    outline: 3px solid yellow;
   }
 
-  &.is-selected {
-    outline: 3px solid $blue;
+  &:focus {
+    outline: dotted 3px $blue;
   }
 }

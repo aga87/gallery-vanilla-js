@@ -266,9 +266,9 @@ body {
     display: none; }
   .c-thumbnail:hover {
     cursor: pointer; }
+  .c-thumbnail.is-selected {
+    outline: 3px solid yellow; }
   .c-thumbnail:focus {
     outline: dotted 3px #0daeee; }
-  .c-thumbnail.is-selected {
-    outline: 3px solid #0daeee; }
 
 /*# sourceMappingURL=main.min.css.map */
