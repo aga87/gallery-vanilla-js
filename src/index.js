@@ -139,14 +139,8 @@
   }
 
   function handleKeyDown(e) {
-    // var key = e.code;
-    // fixme: test
     var key = e.key;
     var currentIndex;
-
-    // fixme:
-    console.log(e.code);
-    console.log(e.key);
 
     switch (key) {
       case 'Enter':
@@ -191,10 +185,15 @@
     }
   }
 
-  window.onload = function () {
+  // window.onload = function () {
+  //   createPrevBtn();
+  //   createNextBtn();
+  // };
+
+  window.addEventListener('load', function () {
     createPrevBtn();
     createNextBtn();
-  };
+  });
 
   navEl.addEventListener('click', handleNavClick, false);
 
