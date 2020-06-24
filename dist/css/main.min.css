@@ -112,6 +112,24 @@ body {
   max-width: 1000px;
   margin: 0 auto; }
 
+@supports (position: relative) {
+  .l-nav-wrapper {
+    position: relative;
+    min-height: 100px; }
+    .l-nav-wrapper__btn-prev {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      left: 0;
+      height: 100%; }
+    .l-nav-wrapper__btn-next {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      right: 0;
+      height: 100%; } }
 .l-slide-wrapper {
   max-width: 600px;
   margin: 0 auto; }
@@ -133,9 +151,161 @@ body {
 .l-grid {
   list-style-type: none;
   display: grid;
+  display: -ms-flexbox;
+  flex-flow: row wrap;
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
   padding: 1.5rem 5px; }
+  .l-grid > *:nth-child(1) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(2) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(3) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(4) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(5) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(6) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(7) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(8) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(9) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(10) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(11) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(12) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(13) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(14) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(15) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(16) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(17) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(18) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(19) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(20) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(21) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(22) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(23) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(24) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(25) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(26) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(27) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(28) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(29) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(30) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(31) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(32) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(33) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(34) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(35) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(36) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(37) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(38) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(39) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(40) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(41) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(42) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(43) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(44) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(45) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(46) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(47) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(48) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(49) {
+    flex-basis: 150px;
+    padding: 5px; }
+  .l-grid > *:nth-child(50) {
+    flex-basis: 150px;
+    padding: 5px; }
 
 @media only screen and (min-width: 600px) {
   .l-nav-wrapper {

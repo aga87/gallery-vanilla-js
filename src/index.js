@@ -139,10 +139,6 @@
     changeImg(slideImg, newSlideImg);
     changeLink(slideCreditLink, newSlideCreditLink);
 
-    // thumbnails.forEach((thumbnail) => {
-    //   unselect(thumbnail);
-    // });
-    // todo: testt
     for (var i = 0; i < thumbnails.length; i++) {
       unselect(thumbnails[i]);
     }
@@ -199,20 +195,11 @@
     }
   }
 
-  // todo: test
-  // window.addEventListener('load', createPrevBtn);
-  // window.addEventListener('load', createNextBtn);
-
   window.onload = createPrevBtn;
   window.onload = createNextBtn;
 
   navEl.addEventListener('click', handleNavClick, false);
 
-  // thumbnails.forEach((thumbnail) => {
-  //   thumbnail.addEventListener('click', handleThumbnailClick, false);
-  //   thumbnail.addEventListener('keydown', handleKeyDown);
-  // });
-  // todo: test
   for (var i = 0; i < thumbnails.length; i++) {
     thumbnails[i].addEventListener('click', handleThumbnailClick, false);
     thumbnails[i].addEventListener('keydown', handleKeyDown);
