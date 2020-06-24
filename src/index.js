@@ -9,8 +9,8 @@
 
   /**
    * Create a "previous" button:
-   *  <button type="button" title="Show previous" class="l-nav-wrapper__btn-prev o-btn o-btn--prev jsNav__previous">
-   *    <span class="jsNav__previous" aria-hidden="true">&lt;</span>
+   *  <button type="button" title="Show previous" class="l-nav-wrapper__btn-prev o-btn o-btn--prev" data-nav="previous">
+   *    <span data-nav="previous" aria-hidden="true">&lt;</span>
    *  </button>
    */
 
@@ -20,14 +20,10 @@
     var text = document.createTextNode('<');
     prevBtn.setAttribute('type', 'button');
     prevBtn.setAttribute('title', 'Show previous');
-    prevBtn.classList.add(
-      'o-btn',
-      'o-btn--prev',
-      'l-nav-wrapper__btn-prev',
-      'jsNav__previous'
-    );
-    spanEl.classList.add('jsNav__previous');
+    prevBtn.setAttribute('data-nav', 'previous');
+    prevBtn.classList.add('o-btn', 'o-btn--prev', 'l-nav-wrapper__btn-prev');
     spanEl.setAttribute('aria-hidden', 'true');
+    spanEl.setAttribute('data-nav', 'previous');
     spanEl.appendChild(text);
     prevBtn.appendChild(spanEl);
     navEl.appendChild(prevBtn);
@@ -46,21 +42,10 @@
     var text = document.createTextNode('>');
     nextBtn.setAttribute('type', 'button');
     nextBtn.setAttribute('title', 'Show next');
-    // fixme: test
     nextBtn.setAttribute('data-nav', 'next');
-
-    nextBtn.classList.add(
-      'o-btn',
-      'o-btn--next',
-      'l-nav-wrapper__btn-next'
-      // 'jsNav__next'
-    );
-
-    // spanEl.classList.add('jsNav__next');
+    nextBtn.classList.add('o-btn', 'o-btn--next', 'l-nav-wrapper__btn-next');
     spanEl.setAttribute('aria-hidden', 'true');
-    // fixme:
     spanEl.setAttribute('data-nav', 'next');
-
     spanEl.appendChild(text);
     nextBtn.appendChild(spanEl);
     navEl.appendChild(nextBtn);
@@ -115,8 +100,6 @@
 
     var newIndex;
     // Get the index of the thumbnail to display
-    // fixme:
-    // if (e.target.matches('.jsNav__next'))
     if (e.target.getAttribute('data-nav') === 'next') {
       newIndex = getNextIndex(currentIndex, thumbnails);
     } else if (e.target.matches('.jsNav__previous')) {
