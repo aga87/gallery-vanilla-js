@@ -102,6 +102,9 @@ body {
   font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.5; }
 
+:link:focus {
+  outline: dotted 3px #0daeee; }
+
 @media only screen and (min-width: 600px) {
   html {
     font-size: 125%; } }

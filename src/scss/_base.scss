@@ -8,9 +8,9 @@ body {
   line-height: $b-l-h;
 }
 
-// :focus {
-//   outline: dotted 3px $blue;
-// }
+:link:focus {
+  outline: dotted 3px $blue;
+}
 
 @media only screen and (min-width: $breakpoint) {
   html {
