@@ -1,5 +1,7 @@
 .c-thumbnail {
   display: block;
+  // fixme:
+  padding: 5px;
 
   &__backdrop {
     background: $light-grey;

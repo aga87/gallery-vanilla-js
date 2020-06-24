@@ -185,11 +185,6 @@
     }
   }
 
-  // window.onload = function () {
-  //   createPrevBtn();
-  //   createNextBtn();
-  // };
-
   window.addEventListener('load', function () {
     createPrevBtn();
     createNextBtn();
