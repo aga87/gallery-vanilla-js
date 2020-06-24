@@ -41,9 +41,12 @@
 
 .l-grid {
   list-style-type: none;
-  display: -ms-grid;
+  // display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  // fixme: ie11
+  display: -ms-flexbox;
+  flex-flow: row wrap;
+  // -ms-grid-columns: 1fr 1fr 1fr 1fr;
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
   padding: ($b-l-h * 1rem) 5px;
@@ -55,14 +58,14 @@
   }
 
   .l-grid {
-    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    // -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: repeat(6, 1fr);
   }
 }
 
 @media only screen and (min-width: $breakpoint + 300px) {
   .l-grid {
-    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    // -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: repeat(8, 1fr);
   }
 }
