@@ -102,9 +102,6 @@ body {
   font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.5; }
 
-:focus {
-  outline: dotted 3px #0daeee; }
-
 @media only screen and (min-width: 600px) {
   html {
     font-size: 125%; } }
@@ -388,7 +385,6 @@ body {
   .c-thumbnail:hover {
     cursor: pointer; }
   .c-thumbnail.is-selected {
-    outline: 3px solid #0daeee;
-    outline: 3px solid yellow; }
+    outline: 3px solid #0daeee; }
 
 /*# sourceMappingURL=main.min.css.map */
