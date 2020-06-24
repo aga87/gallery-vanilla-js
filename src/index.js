@@ -102,7 +102,7 @@
     // Get the index of the thumbnail to display
     if (e.target.getAttribute('data-nav') === 'next') {
       newIndex = getNextIndex(currentIndex, thumbnails);
-    } else if (e.target.matches('.jsNav__previous')) {
+    } else if (e.target.getAttribute('data-nav') === 'previous') {
       newIndex = getPreviousIndex(currentIndex, thumbnails);
     }
 
