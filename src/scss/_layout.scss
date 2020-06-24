@@ -56,6 +56,10 @@
   text-align: center;
 }
 
+.l-thumbnail-container:focus {
+  outline: dotted 3px $blue;
+}
+
 .l-grid {
   list-style-type: none;
   // display: -ms-grid;

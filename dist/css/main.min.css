@@ -148,6 +148,9 @@ body {
 .l-nav-wrapper {
   text-align: center; }
 
+.l-thumbnail-container:focus {
+  outline: dotted 3px #0daeee; }
+
 .l-grid {
   list-style-type: none;
   display: grid;
@@ -327,7 +330,10 @@ body {
     animation-name: lightUp;
     animation-duration: 2s;
     animation-iteration-count: 3;
-    animation-delay: 3s; } }
+    animation-delay: 3s; }
+    .o-btn:focus {
+      outline: none;
+      color: #0daeee; } }
 .o-btn {
   display: inline-block;
   width: 50px;
@@ -347,8 +353,7 @@ body {
   .o-btn:hover {
     color: #0daeee; }
   .o-btn:focus {
-    outline: none;
-    color: #0daeee; }
+    outline: dotted 3px #0daeee; }
   .o-btn:active {
     font-weight: 700; }
 
@@ -384,6 +389,8 @@ body {
     display: none; }
   .c-thumbnail:hover {
     cursor: pointer; }
+  .c-thumbnail:focus {
+    outline: dotted 3px #0daeee; }
   .c-thumbnail.is-selected {
     outline: 3px solid #0daeee; }
 
