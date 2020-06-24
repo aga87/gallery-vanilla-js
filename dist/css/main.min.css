@@ -267,7 +267,7 @@ body {
   .c-thumbnail:hover {
     cursor: pointer; }
   .c-thumbnail.is-selected {
-    outline: 3px solid #ffd900; }
+    border: 3px solid #ffd900; }
   .c-thumbnail:focus {
     outline: dotted 3px #0daeee;
     outline-offset: 3px; }
