@@ -39,6 +39,14 @@
   }
 }
 
+@mixin ie-flex-basis($start: 1, $img: 50) {
+  @for $i from $start through $img {
+    > *:nth-child(#{$i}) {
+      flex-basis: 50px;
+    }
+  }
+}
+
 // todo: test
 .l-grid {
   list-style-type: none;
@@ -47,6 +55,7 @@
   // fixme: ie11
   display: -ms-flexbox;
   flex-flow: row wrap;
+  @include ie-flex-basis($start: 1, $img: 50);
   // -ms-grid-columns: 1fr 1fr 1fr 1fr;
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
