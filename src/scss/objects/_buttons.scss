@@ -1,9 +1,18 @@
-@keyframes lightUp {
-  from {
-    color: transparent;
+@supports (position: relative) {
+  @keyframes lightUp {
+    from {
+      color: transparent;
+    }
+    to {
+      color: $blue;
+    }
   }
-  to {
-    color: $blue;
+  .o-btn {
+    color: transparent;
+    animation-name: lightUp;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+    animation-delay: 3s;
   }
 }
 
@@ -12,15 +21,15 @@
   width: 50px;
   text-align: center;
   background: transparent;
-  background: red;
   border: none;
   font-family: inherit;
   @include fluid-type(320px, 800px, 36px, 64px);
-  color: transparent;
-  animation-name: lightUp;
-  animation-duration: 2s;
-  animation-iteration-count: 3;
-  animation-delay: 3s;
+  // color: transparent;
+  color: $blue;
+  // animation-name: lightUp;
+  // animation-duration: 2s;
+  // animation-iteration-count: 3;
+  // animation-delay: 3s;
 
   &:hover {
     color: $blue;

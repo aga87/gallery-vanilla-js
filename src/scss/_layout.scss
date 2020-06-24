@@ -45,6 +45,7 @@
   @for $i from $start through $imgNo {
     > *:nth-child(#{$i}) {
       flex-basis: $flex-basis;
+      flex-grow: 1;
       // padding: 5px;
     }
   }
@@ -66,7 +67,7 @@
   @include ie-flex-basis($start: 1, $imgNo: 50, $flex-basis: 100px);
   // -ms-grid-columns: 1fr 1fr 1fr 1fr;
   grid-template-columns: repeat(4, 1fr);
-  // gap: 5px;
+  gap: 5px;
   padding: ($b-l-h * 0.5rem) 5px;
 }
 
