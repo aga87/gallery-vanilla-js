@@ -142,9 +142,7 @@
     for (var i = 0; i < thumbnails.length; i++) {
       unselect(thumbnails[i]);
     }
-
     select(this);
-
     this.focus();
   }
 
@@ -195,8 +193,13 @@
     }
   }
 
-  window.onload = createPrevBtn;
-  window.onload = createNextBtn;
+  // window.onload = createPrevBtn;
+  // window.onload = createNextBtn;
+
+  window.onload = function () {
+    createPrevBtn();
+    createNextBtn();
+  };
 
   navEl.addEventListener('click', handleNavClick, false);
 
