@@ -269,6 +269,7 @@ body {
   .c-thumbnail.is-selected {
     outline: solid 3px #0daeee; }
   .c-thumbnail:focus {
-    outline: dotted 3px #0daeee; }
+    outline: dotted 3px #0daeee;
+    outline-offset: 2px; }
 
 /*# sourceMappingURL=main.min.css.map */

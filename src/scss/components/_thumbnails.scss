@@ -19,5 +19,6 @@
 
   &:focus {
     outline: dotted 3px $blue;
+    outline-offset: 2px;
   }
 }
