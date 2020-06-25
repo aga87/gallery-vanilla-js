@@ -14,12 +14,10 @@
   }
 
   &.is-selected {
-    // outline: 3px solid rgb(255, 217, 0);
-    border: 3px solid rgb(255, 217, 0);
+    outline: solid 3px $blue;
   }
 
   &:focus {
     outline: dotted 3px $blue;
-    outline-offset: 3px;
   }
 }
