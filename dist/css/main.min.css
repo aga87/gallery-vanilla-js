@@ -270,6 +270,6 @@ body {
     outline: solid 3px #0daeee; }
   .c-thumbnail:focus {
     outline: dotted 3px #0daeee;
-    outline-offset: 2px; }
+    outline-offset: 3px; }
 
 /*# sourceMappingURL=main.min.css.map */
