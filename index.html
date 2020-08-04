@@ -3,7 +3,6 @@
   <head>
     <title>Image Gallery - Bikes</title>
     <meta charset="UTF-8" />
-    <!-- Test fixme: -->
     <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -411,6 +410,18 @@
         </div>
       </div>
     </div>
-    <script src="./src/index.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        console.log('Service Worker supported');
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('sw.js')
+            .then((reg) => console.log('Service Worker registered'))
+            .catch((err) => console.log(`Service Worker: Error: ${err}`));
+        });
+      }
+    </script>
+    <!-- fixme: delete ind.html ? or publish? -->
+    <script src="./dist/index.min.js"></script>
   </body>
 </html>
