@@ -2,7 +2,7 @@ const cacheName = 'v1';
 
 // Install
 
-self.addEventListener('install', (e) => {
+self.addEventListener('install', () => {
   console.log('Service Worker: Installed');
 });
 
@@ -41,6 +41,6 @@ self.addEventListener('fetch', (e) => {
         });
         return res;
       })
-      .catch((err) => caches.match(e.request).then((res) => res))
+      .catch(() => caches.match(e.request).then((res) => res))
   );
 });
