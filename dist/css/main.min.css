@@ -228,9 +228,10 @@ body {
   .o-btn {
     color: transparent;
     animation-name: lightUp;
-    animation-duration: 2s;
-    animation-iteration-count: 3;
-    animation-delay: 3s; }
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-iteration-count: 7;
+    animation-direction: alternate-reverse; }
     .o-btn:focus {
       outline: none;
       color: #0daeee; } }
