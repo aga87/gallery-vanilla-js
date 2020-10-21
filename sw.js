@@ -1,4 +1,4 @@
-const cacheName = 'v1';
+const CACHE_NAME = 'v1';
 
 // Install
 
@@ -6,40 +6,55 @@ self.addEventListener('install', () => {
   console.log('Service Worker: Installed');
 });
 
-// Activate
+// Activate and remove old caches
 
-self.addEventListener('activate', (e) => {
+self.addEventListener('activate', function (event) {
   console.log('Service Worker: Activated');
-  // Remove unwanted caches
-  e.waitUntil(
-    caches.keys().then((cacheNames) => {
+  event.waitUntil(
+    caches.keys().then((cacheKeys) => {
       return Promise.all(
-        cacheNames.map((cache) => {
-          if (cache !== cacheName) {
-            console.log('Service Worker: Clearing Old Cache');
-            return caches.delete(cache);
-          }
-        })
+        cacheKeys
+          .filter((cacheKey) => cacheKey !== CACHE_NAME)
+          .map((cacheKey) => caches.delete(cacheKey))
       );
     })
   );
 });
 
-// Fetch
+// Cache on network response:
+// If a request doesn't match anything in the cache, get it from the network,
+// send it to the page, and add it to the cache at the same time.
 
 self.addEventListener('fetch', (e) => {
-  console.log('Service Worker: Fetching');
   e.respondWith(
-    fetch(e.request)
-      .then((res) => {
-        // Clone the response
-        const resClone = res.clone();
-        // Open cache and add the response to it
-        caches.open(cacheName).then((cache) => {
-          cache.put(e.request, resClone);
-        });
-        return res;
-      })
-      .catch(() => caches.match(e.request).then((res) => res))
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.match(e.request).then(
+        (response) =>
+          response ||
+          fetch(e.request).then((response) => {
+            cache.put(e.request, response.clone());
+            return response;
+          })
+      );
+    })
   );
 });
+
+// Network then cache
+
+// self.addEventListener('fetch', (e) => {
+//   console.log('Service Worker: Fetching');
+//   e.respondWith(
+//     fetch(e.request)
+//       .then((res) => {
+//         // Clone the response
+//         const resClone = res.clone();
+//         // Open cache and add the response to it
+//         caches.open(CACHE_NAME).then((cache) => {
+//           cache.put(e.request, resClone);
+//         });
+//         return res;
+//       })
+//       .catch(() => caches.match(e.request).then((res) => res))
+//   );
+// });
