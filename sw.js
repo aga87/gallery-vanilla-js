@@ -39,24 +39,3 @@ self.addEventListener('fetch', (e) => {
     })
   );
 });
-
-// Network then cache
-
-// self.addEventListener('fetch', (e) => {
-//   console.log('Service Worker: Fetching');
-//   e.respondWith(
-//     fetch(e.request)
-//       .then((res) => {
-//         // Clone the response
-//         const resClone = res.clone();
-//         // Open cache and add the response to it
-//         caches.open(CACHE_NAME).then((cache) => {
-//           cache.put(e.request, resClone);
-//         });
-//         return res;
-//       })
-//       .catch(() => caches.match(e.request).then((res) => res))
-//   );
-// });
-
-// test
