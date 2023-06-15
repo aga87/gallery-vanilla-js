@@ -1,0 +1,33 @@
+@import './variables';
+
+.l-nav-wrapper {
+  display: none;
+}
+
+.c-slide {
+  display: none;
+}
+
+.l-grid {
+  display: block;
+  max-width: $breakpoint;
+  margin: 0 auto;
+}
+
+.c-thumbnail {
+  display: block;
+
+  &__caption {
+    display: block;
+    text-align: center;
+    padding: ($b-l-h * 1rem) 0 ($b-l-h * 3rem) 0;
+  }
+
+  &:hover {
+    cursor: unset;
+  }
+
+  &.is-selected {
+    outline: none;
+  }
+}

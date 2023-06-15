@@ -1,0 +1,64 @@
+.o-btn {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  @include fluid-type(320px, 800px, 36px, 64px);
+  color: $blue;
+
+  &:hover {
+    color: $blue;
+  }
+
+  &:focus {
+    outline: dotted 3px $blue;
+  }
+
+  &:active {
+    font-weight: 700;
+  }
+}
+
+@supports (position: relative) {
+  @keyframes lightUp {
+    from {
+      color: transparent;
+    }
+    to {
+      color: $blue;
+    }
+  }
+  .o-btn {
+    color: transparent;
+    animation-name: lightUp;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-iteration-count: 7;
+    animation-direction: alternate-reverse;
+
+    &:focus {
+      outline: none;
+      color: $blue;
+    }
+  }
+}
+
+.o-btn--prev:hover {
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 255, 255),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.2)
+  );
+}
+
+.o-btn--next:hover {
+  background-image: linear-gradient(
+    to left,
+    rgb(255, 255, 255),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.2)
+  );
+}

@@ -1,0 +1,78 @@
+.l-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.l-nav-wrapper {
+  text-align: center;
+}
+
+@supports (position: relative) {
+  .l-nav-wrapper {
+    position: relative;
+    min-height: 100px;
+
+    &__btn-prev {
+      @include centerY-absolute();
+      left: 0;
+      height: 100%;
+    }
+
+    &__btn-next {
+      @include centerY-absolute();
+      right: 0;
+      height: 100%;
+    }
+  }
+}
+
+.l-slide-wrapper {
+  max-width: $breakpoint;
+  margin: 0 auto;
+}
+
+.l-backdrop {
+  width: 100%;
+  // responsive square
+  padding-top: 100%;
+  position: relative;
+
+  &__img {
+    @include centerXY-absolute();
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+  }
+}
+
+.l-thumbnail-container:focus {
+  outline: dotted 3px $blue;
+}
+
+.l-grid {
+  list-style-type: none;
+  //IE11: flexbox with semi-automated img placing (mixin)
+  display: -ms-flexbox;
+  flex-flow: row wrap;
+  @include ie-flex-basis($start: 1, $imgNo: 8, $flex-basis: 100px);
+  // Progressive enhancement
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  padding: ($b-l-h * 0.5rem) 5px;
+}
+
+@media only screen and (min-width: $breakpoint) {
+  .l-nav-wrapper {
+    padding: 0 50px;
+  }
+
+  .l-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media only screen and (min-width: $breakpoint + 300px) {
+  .l-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
